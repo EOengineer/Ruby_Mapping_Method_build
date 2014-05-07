@@ -1,12 +1,15 @@
 require 'pry'
 
 def mapping(array)
-  output = Array.new
-  array.each do |num|
-  output << num if num >= 5
+  mapped_array = Array.new
+  counter = array.size
+  index = 0
+  until counter <= 0
+    mapped_array << array[index] if array[index] > 5
+    index += 1
+    counter -= 1
   end
-  output
- # binding.pry
+  mapped_array
 end
 
-puts mapping(1.upto(10))
+puts mapping(1.upto(10).to_a)
